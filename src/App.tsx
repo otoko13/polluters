@@ -3,8 +3,13 @@ import './App.scss';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import WorldMap from './_components/worldMap/WorldMap';
 import Header from './_components/header/Header';
+import Polluter from './model/Polluter';
 
-function App(): JSX.Element {
+export interface IAppProps {
+  polluters: Polluter[];
+}
+
+function App(props: IAppProps): JSX.Element {
   return (
     <div className="App">
       <CssBaseline />
@@ -12,7 +17,7 @@ function App(): JSX.Element {
         <Header />
       </div>
       <div className="map-container">
-        <WorldMap />
+        <WorldMap polluters={props.polluters} />
       </div>
     </div>
   );
