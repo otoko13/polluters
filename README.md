@@ -16,3 +16,5 @@ Run tests using `npm run test`.
 ## Future improvements and enhancements
 
 As always with coding exercises, you can't do everything you'd love to. Here are a list of improvements I'd make to the design and implementation given more time:
+
+- utilise the FlexBox within material-UI

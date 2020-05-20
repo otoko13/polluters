@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "4.9.14",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -18,7 +20,8 @@
     "@types/react": "16.8.24",
     "@types/react-dom": "16.0.5",
     "@types/jest": "22.2.3",
-    "@types/react-simple-maps": "1.0.2",
+    "@types/material-ui": "^0.21.7",
+    "@types/react-simple-maps": "^1.0.2",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "@testing-library/dom": "^6.8.1",
