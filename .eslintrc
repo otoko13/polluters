@@ -1,0 +1,118 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js",".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "ignorePatterns": [
+        "/node_modules",
+        "/bin",
+        "/obj",
+        "/dist",
+        "/*.js"
+    ],
+    "plugins": [
+        "promise",
+        "@typescript-eslint",
+        "react",
+        "react-hooks",
+        "jest",
+        "jsx-a11y"
+    ],
+    "extends": [
+        "react-app",
+        "airbnb",
+        "eslint:recommended",
+        "plugin:promise/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/react"
+    ],
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
+        "no-multiple-empty-lines": "error",
+        "default-case": "error",
+        "eqeqeq": "error",
+        "no-plusplus": "error",
+        "curly": "error",
+        "object-curly-newline": "off",
+        "new-parens": "error",
+        "no-caller": "error",
+        "no-bitwise": "error",
+        "no-console": "error",
+        "no-new-wrappers": "error",
+        "no-eval": "error",
+        "no-shadow": "error",
+        "dot-notation": "error",
+        "no-undef-init": "error",
+        "no-unused-expressions": "error",
+        "radix": "error",
+        "no-duplicate-imports": "error",
+        "@typescript-eslint/promise-function-async": "error",
+        "@typescript-eslint/await-thenable": "error",
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/no-throw-literal": "error",
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/unified-signatures": "error",
+        "@typescript-eslint/semi": "error",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "error",
+        "react-hooks/exhaustive-deps": "error",
+        "quotes": ["error", "single", { "avoidEscape": true }],
+        "no-restricted-globals": ["error",
+            "fdescribe",
+            "fit"
+        ],
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", 2],
+        "no-restricted-imports": ["error", {
+            "paths": [
+                "d3",
+                "@fluentui/react",
+                "qtip2",
+                "core-js"
+            ],
+            "patterns": [
+                // No extensions
+                "*.js",
+                "*.jsx",
+                "*.ts",
+                "*.tsx",
+                // Use the module name
+                "**/node_modules/**"
+            ]
+        }],
+        "import/extensions": ["error", "always", {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+        }],
+        "max-len": ["error", 140]
+    }
+  }
