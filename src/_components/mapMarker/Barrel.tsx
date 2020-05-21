@@ -26,8 +26,10 @@ const Barrel = (props: IBarrelProps) => {
   }
 
   return (
-    <g className={`Barrel ${getHighlightClass()}`}>
-      <BarrelSvg />
+    <g className={`Barrel ${getHighlightClass()} rank-${props.rank}`}>
+      <g className="barrel-content">
+        <BarrelSvg />
+      </g>
     </g>
   );
 };

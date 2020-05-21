@@ -30,7 +30,7 @@ const WorldMap = (props: IWorldMapProps) => {
               ({ geographies }): JSX.Element[] => geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} />)
             }
           </Geographies>
-          {props.polluters.map(polluter => (
+          {props.polluters.sort((p1, p2) => (p1.rank < p2.rank ? 1 : -1)).map(polluter => (
             <MapMarker
               key={polluter.rank}
               polluter={polluter}
