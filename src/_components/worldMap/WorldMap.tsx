@@ -1,6 +1,6 @@
 import React from 'react';
 import './worldMap.scss';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography, ZoomableGroup, Position } from 'react-simple-maps';
 
 import mapJson from '../../resources/world-110m.json';
 import { IPolluter } from '../../model/Polluter';
@@ -16,6 +16,8 @@ export interface IWorldMapProps {
 }
 
 const WorldMap = (props: IWorldMapProps) => {
+  const [zoomLevel, setZoomLevel] = React.useState(1);
+
   function shouldUnhighlightPolluter(polluter: IPolluter) {
     return (props.hoveredPolluters.length > 0 && !isHovered(polluter)) ||
       (props.selectedPolluter && props.selectedPolluter.rank !== polluter.rank);
@@ -25,10 +27,15 @@ const WorldMap = (props: IWorldMapProps) => {
     return props.hoveredPolluters.findIndex(p => p.rank === polluter.rank) > -1;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function handleZoom(position: Position) {
+    setZoomLevel(position.zoom);
+  }
+
   return (
     <div className="WorldMap">
       <ComposableMap height={462}>
-        <ZoomableGroup zoom={1} center={[60, 0]}>
+        <ZoomableGroup center={[60, 0]} onMoveEnd={handleZoom}>
           <Geographies geography={mapJson}>
             {
               ({ geographies }): JSX.Element[] => geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} />)
@@ -37,6 +44,7 @@ const WorldMap = (props: IWorldMapProps) => {
           {props.polluters.sort((p1, p2) => (p1.rank < p2.rank ? 1 : -1)).map(polluter => (
             <MapMarker
               key={polluter.rank}
+              zoomLevel={zoomLevel}
               polluter={polluter}
               onHovered={() => props.onPolluterHovered(polluter)}
               onUnhovered={() => props.onPolluterUnhovered(polluter)}

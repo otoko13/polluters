@@ -11,6 +11,7 @@ export enum EHighlightStatus {
 export interface IBarrelProps {
   rank: number;
   status: EHighlightStatus;
+  magnification: number;
 }
 
 const Barrel = (props: IBarrelProps) => {
@@ -27,8 +28,10 @@ const Barrel = (props: IBarrelProps) => {
 
   return (
     <g className={`Barrel ${getHighlightClass()} rank-${props.rank}`}>
-      <g className="barrel-content">
-        <BarrelSvg />
+      <g style={{ transform: `scale3d(${props.magnification}, ${props.magnification}, ${props.magnification})` }}>
+        <g className="barrel-content">
+          <BarrelSvg />
+        </g>
       </g>
     </g>
   );

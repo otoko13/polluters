@@ -11,6 +11,7 @@ export interface IMapMarkerProps {
   isSelected?: boolean;
   isHovered?: boolean;
   isUnhighlighted?: boolean;
+  zoomLevel: number;
   onHovered: () => void;
   onUnhovered: () => void;
   onSelected: () => void;
@@ -35,13 +36,13 @@ const MapMarker = (props: IMapMarkerProps) => {
       onClose={props.onUnhovered}
       enterDelay={10}
     >
-      <svg>
+      <svg> // need this here as Tooltip needs a child that can accept a ref
         <Marker
           key={props.polluter.rank}
           coordinates={[props.polluter.longitude, props.polluter.latitude]}
           onClick={props.onSelected}
         >
-          <Barrel rank={props.polluter.rank} status={getHighlightStatus()} />
+          <Barrel rank={props.polluter.rank} status={getHighlightStatus()} magnification={1 / props.zoomLevel} />
         </Marker>
       </svg>
     </Tooltip>
