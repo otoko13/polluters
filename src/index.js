@@ -7,8 +7,7 @@ import PollutersUtil from './util/polluters.util';
 const polluters = PollutersUtil.getPolluters();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App polluters={polluters} />
-  </React.StrictMode>,
+  // need to remove StrictMode tags as Material UI not caught up with latest React
+  <App polluters={polluters} />,
   document.getElementById('root'),
 );

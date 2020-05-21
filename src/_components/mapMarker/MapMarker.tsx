@@ -1,25 +1,51 @@
 import React from 'react';
 
 import { Marker } from 'react-simple-maps';
-import Polluter from '../../model/Polluter';
+import Tooltip from '@material-ui/core/Tooltip';
+import { IPolluter } from '../../model/Polluter';
+import Barrel, { EHighlightStatus } from './Barrel';
+import MapMarkerTooltipContent from './MapMarkerTooltipContent';
 
 export interface IMapMarkerProps {
-  polluter: Polluter;
-  isSelected: boolean;
+  polluter: IPolluter;
+  isSelected?: boolean;
+  isHovered?: boolean;
+  isUnhighlighted?: boolean;
+  onHovered: () => void;
+  onUnhovered: () => void;
+  onSelected: () => void;
 }
 
-function MapMarker(props: IMapMarkerProps): JSX.Element {
+const MapMarker = (props: IMapMarkerProps) => {
+  function getHighlightStatus() {
+    if (props.isHovered || props.isSelected) {
+      return EHighlightStatus.Highlighted;
+    }
+    if (props.isUnhighlighted) {
+      return EHighlightStatus.unhighlighted;
+    }
+    return EHighlightStatus.Neutral;
+  }
+
   return (
-    <Marker
+    <Tooltip
+      title={<MapMarkerTooltipContent polluter={props.polluter} />}
       key={props.polluter.rank}
-      coordinates={[props.polluter.longitude, props.polluter.latitude]}
-      onClick={() => alert(props.polluter.rank)}
+      onOpen={props.onHovered}
+      onClose={props.onUnhovered}
+      enterDelay={0}
     >
-      <text textAnchor="middle" fill="#F53">
-        {props.polluter.name}
-      </text>
-    </Marker>
+      <svg>
+        <Marker
+          key={props.polluter.rank}
+          coordinates={[props.polluter.longitude, props.polluter.latitude]}
+          onClick={props.onSelected}
+        >
+          <Barrel rank={props.polluter.rank} status={getHighlightStatus()} />
+        </Marker>
+      </svg>
+    </Tooltip>
   );
-}
+};
 
 export default MapMarker;

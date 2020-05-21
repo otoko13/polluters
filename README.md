@@ -19,3 +19,4 @@ As always with coding exercises, you can't do everything you'd love to. Here are
 
 - utilise the FlexBox within material-UI
 - automate coordinates search using Google Cloud Platform API
+- transform the barrel size as zoom occurs

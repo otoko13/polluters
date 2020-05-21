@@ -1,0 +1,77 @@
+<g id="barrel-image">
+  <g id="barrel-inner">
+    <path
+        id="rect2395"
+        class="barrel-main"
+        stroke-width="2.1273"
+        fill-rule="evenodd"
+        d="m284.76 106.86c-54.64 2.39-226.74-3.12-226.74 46.41v586.15c0 49.53 100.33 89.405 224.97 89.405 124.63 0 224.97-39.875 224.97-89.405v-586.15c0-49.53-153.4-43.972-223.19-46.41z"
+    />
+    <path
+        id="path3888"
+        class="barrel-line"
+        stroke="blue"
+        stroke-width="1.9877"
+        fill="none"
+        d="m58.238 225.52v510.8c0 43.237 100.37 78.055 225.03 78.055s225.03-34.818 225.03-78.055v-510.8h-450.06z"
+    />
+    <path
+        id="path8747"
+        class="barrel-ridge"
+        stroke-width="14.601"
+        stroke="green"
+        transform="matrix(1.1601 0 0 1.0759 -28.858 77.981)"
+        d="m471 76.071c0 30.1-90.438 54.5-202 54.5s-202-24.4-202-54.5 90.438-54.5 202-54.5 202 24.4 202 54.5z"
+    />
+    <path
+        id="path8747-5"
+        class="barrel-ridge"
+        stroke-width="14.601"
+        stroke="yellow"
+        transform="matrix(1.1601 0 0 1.0759 -28.858 274.17)"
+        d="m471 76.071c0 30.1-90.438 54.5-202 54.5s-202-24.4-202-54.5 90.438-54.5 202-54.5 202 24.4 202 54.5z"
+    />
+    <path
+        id="path8747-5-1"
+        class="barrel-ridge"
+        stroke-width="14.601"
+        stroke="pink"
+        transform="matrix(1.1601 0 0 1.0759 -28.858 683.73)"
+        d="m471 76.071c0 30.1-90.438 54.5-202 54.5s-202-24.4-202-54.5 90.438-54.5 202-54.5 202 24.4 202 54.5z"
+    />
+    <path
+        id="path8747-5-6"
+        class="barrel-ridge"
+        stroke-width="14.601"
+        stroke="yellow"
+        fill="none"
+        transform="matrix(1.1601 0 0 1.0759 -28.858 491.2)"
+        d="m471 76.071c0 30.1-90.438 54.5-202 54.5s-202-24.4-202-54.5 90.438-54.5 202-54.5 202 24.4 202 54.5z"
+    />
+    <rect
+        id="rect9404"
+        class="barrel-main"
+        y="288.88"
+        width="452.31"
+        x="56.971"
+        height="67.014"
+    />
+    <rect
+        id="rect9404-6"
+        class="barrel-main"
+        y="505.27"
+        width="452.31"
+        x="56.971"
+        height="67.014"
+    />
+    <rect
+        id="rect9404-6-3"
+        class="barrel-main"
+        y="698.09"
+        width="452.31"
+        x="56.971"
+        fill="red"
+        height="67.014"
+    />
+  </g>
+</g>

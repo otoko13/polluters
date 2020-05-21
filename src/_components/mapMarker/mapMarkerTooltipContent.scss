@@ -1,0 +1,26 @@
+.MuiTooltip-popper {
+  .MuiTooltip-tooltip {
+    background-color: rgba(234, 234, 234, 0.9);
+    color: inherit;
+    border: 1px solid rgb(180, 180, 180);
+
+    .MapMarkerTooltipContent {
+      .title {
+        display: flex;
+        flex-direction: row;
+        justify-items: flex-start;
+        align-items: center;
+
+        .rank {
+          padding-right: 5px;
+          font-size: 1.7em;
+          color: red;
+        }
+        
+        .name {
+          font-size: 1.25em;
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ class PollutersUtil {
       rank: polluter.Rank,
       longitude: polluter.Longitude,
       latitude: polluter.Latitude,
+      globalEmissions: polluter['Global emissions 1965-2017'],
     }));
   }
 }

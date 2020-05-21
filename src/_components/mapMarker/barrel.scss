@@ -1,0 +1,40 @@
+.Barrel {
+  transform: scale3d(0.035, 0.035, 0.035);
+  transition: transform 0.2s linear;
+
+  .barrel-main {
+    stroke: red;
+    fill: red;
+  }
+
+  .barrel-ridge {
+    stroke: pink;
+    fill: red;
+  }
+
+  .barrel-line {
+    stroke: red;
+    fill: none;
+  }
+
+  &.highlighted {
+    transform: scale3d(0.043, 0.043, 0.043);
+  }
+
+  &.unhighlighted {
+    .barrel-main {
+      stroke: grey;
+      fill: grey;
+    }
+  
+    .barrel-ridge {
+      stroke: white;
+      fill: grey;
+    }
+  
+    .barrel-line {
+      stroke: grey;
+      fill: none;
+    }
+  }
+}
