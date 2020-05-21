@@ -17,6 +17,12 @@ const MapMarkerTooltipContent = (props: IMapMarkerTooltipContentProps) => (
         {props.polluter.name}
       </div>
     </div>
+    <div className="global-emissions">
+      <b>Global emissions 1965-2017:</b> {props.polluter.globalEmissions}
+    </div>
+    <div className="instruction">
+      Click the barrel to see more...
+    </div>
   </div>
 );
 

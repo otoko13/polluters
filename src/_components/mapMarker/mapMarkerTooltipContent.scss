@@ -3,6 +3,7 @@
     background-color: rgba(234, 234, 234, 0.9);
     color: inherit;
     border: 1px solid rgb(180, 180, 180);
+    padding: 15px;
 
     .MapMarkerTooltipContent {
       .title {
@@ -13,13 +14,24 @@
 
         .rank {
           padding-right: 5px;
-          font-size: 1.7em;
+          font-size: 1.8em;
           color: red;
         }
         
         .name {
-          font-size: 1.25em;
+          font-size: 1.35em;
         }
+      }
+
+      .global-emissions {
+        padding-top: 20px;
+        font-size: 1.25em;
+      }
+
+      .instruction {
+        padding-top: 10px;
+        font-size: 1.25em;
+        color: rgb(255, 104, 104);
       }
     }
   }
