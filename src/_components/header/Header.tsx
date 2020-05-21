@@ -16,12 +16,14 @@ const Header = (props: IHeaderProps) => (
     <h1 className="title">
       Top 20 Global Polluters
     </h1>
-    <PollutersMenu
-      polluters={props.polluters}
-      onNothingHovered={props.onPolluterMouseOut}
-      onHovered={props.onPolluterMouseOver}
-      onSelected={props.onPolluterSelected}
-    />
+    <div className="menu-container">
+      <PollutersMenu
+        polluters={props.polluters}
+        onNothingHovered={props.onPolluterMouseOut}
+        onHovered={props.onPolluterMouseOver}
+        onSelected={props.onPolluterSelected}
+      />
+    </div>
   </div>
 );
 

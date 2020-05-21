@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Menu, Button, MenuItem } from '@material-ui/core';
 import { IPolluter } from '../../model/Polluter';
+import './pollutersMenu.scss';
 
 export interface IPollutersMenuProps {
   polluters: IPolluter[];
@@ -11,15 +12,21 @@ export interface IPollutersMenuProps {
 }
 
 const PollutersMenu = (props: IPollutersMenuProps) => {
-  const [menuAnchor, setMenuAnchor] = React.useState<null | HTMLElement>(null);
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const menuAnchorRef = React.useRef<HTMLDivElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setMenuAnchor(event.currentTarget);
+    setMenuOpen(true);
   };
 
   const handleClose = () => {
-    setMenuAnchor(null);
+    setMenuOpen(false);
   };
+
+  function handleSelected(polluter: IPolluter) {
+    setMenuOpen(false);
+    props.onSelected(polluter);
+  }
 
   function getMenuItems() {
     return props.polluters
@@ -27,7 +34,7 @@ const PollutersMenu = (props: IPollutersMenuProps) => {
       .map(p => (
         <MenuItem
           key={p.rank}
-          onClick={() => props.onSelected(p)}
+          onClick={() => handleSelected(p)}
           onMouseOver={() => props.onHovered(p)}
           onMouseOut={() => props.onNothingHovered()}
           onFocus={() => props.onHovered(p)}
@@ -39,15 +46,16 @@ const PollutersMenu = (props: IPollutersMenuProps) => {
   }
 
   return (
-    <div className="PolluterMenu">
+    <div className="PollutersMenu">
       <Button aria-controls="polluters-menu" aria-haspopup="true" onClick={handleClick}>
         See Ranking
       </Button>
+      <div className="anchor" ref={menuAnchorRef} />
       <Menu
         id="polluters-menu"
-        anchorEl={menuAnchor}
+        anchorEl={menuAnchorRef.current}
         keepMounted
-        open={Boolean(menuAnchor)}
+        open={menuOpen}
         onClose={handleClose}
       >
         {getMenuItems()}

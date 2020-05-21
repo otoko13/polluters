@@ -21,7 +21,8 @@ const App = (props: IAppProps) => {
           onPolluterMouseOver={polluter => setHoveredPolluter({ ...polluter })}
           onPolluterMouseOut={() => setHoveredPolluter(undefined)}
           onPolluterSelected={polluter => setSelectedPolluter({ ...polluter })}
-          polluters={props.polluters} />
+          polluters={props.polluters}
+        />
       </div>
       <div className="map-container">
         <WorldMap
