@@ -33,7 +33,7 @@ const MapMarker = (props: IMapMarkerProps) => {
       key={props.polluter.rank}
       onOpen={props.onHovered}
       onClose={props.onUnhovered}
-      enterDelay={0}
+      enterDelay={10}
     >
       <svg>
         <Marker

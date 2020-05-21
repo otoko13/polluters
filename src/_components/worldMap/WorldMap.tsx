@@ -9,16 +9,20 @@ import MapMarker from '../mapMarker/MapMarker';
 export interface IWorldMapProps {
   polluters: IPolluter[];
   selectedPolluter: IPolluter | undefined;
-  hoveredPolluter: IPolluter | undefined;
+  hoveredPolluters: IPolluter[];
   onPolluterSelected: (polluter: IPolluter) => void;
   onPolluterHovered: (polluter: IPolluter) => void;
-  onPolluterUnhovered: () => void;
+  onPolluterUnhovered: (polluter: IPolluter) => void;
 }
 
 const WorldMap = (props: IWorldMapProps) => {
   function shouldUnhighlightPolluter(polluter: IPolluter) {
-    return (props.hoveredPolluter && props.hoveredPolluter.rank !== polluter.rank) ||
+    return (props.hoveredPolluters.length > 0 && !isHovered(polluter)) ||
       (props.selectedPolluter && props.selectedPolluter.rank !== polluter.rank);
+  }
+
+  function isHovered(polluter: IPolluter) {
+    return props.hoveredPolluters.findIndex(p => p.rank === polluter.rank) > -1;
   }
 
   return (
@@ -35,9 +39,9 @@ const WorldMap = (props: IWorldMapProps) => {
               key={polluter.rank}
               polluter={polluter}
               onHovered={() => props.onPolluterHovered(polluter)}
-              onUnhovered={() => props.onPolluterUnhovered()}
+              onUnhovered={() => props.onPolluterUnhovered(polluter)}
               onSelected={() => props.onPolluterSelected(polluter)}
-              isHovered={props.hoveredPolluter && props.hoveredPolluter.rank === polluter.rank}
+              isHovered={isHovered(polluter)}
               isSelected={props.selectedPolluter && props.selectedPolluter.rank === polluter.rank}
               isUnhighlighted={shouldUnhighlightPolluter(polluter)}
             />

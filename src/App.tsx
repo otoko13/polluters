@@ -10,26 +10,35 @@ export interface IAppProps {
 }
 
 const App = (props: IAppProps) => {
-  const [hoveredPolluter, setHoveredPolluter] = React.useState<IPolluter>();
+  const [hoveredPolluters, setHoveredPolluters] = React.useState<IPolluter[]>([]);
   const [selectedPolluter, setSelectedPolluter] = React.useState<IPolluter>();
+
+  function handleUnhovered(polluter: IPolluter) {
+    const withoutPolluter = hoveredPolluters.filter(p => p.rank !== polluter.rank);
+    setHoveredPolluters(withoutPolluter);
+  }
+
+  function handleHovered(polluter: IPolluter) {
+    setHoveredPolluters([{ ...polluter }]);
+  }
 
   return (
     <div className="App">
       <CssBaseline />
       <div className="header-container">
         <Header
-          onPolluterMouseOver={polluter => setHoveredPolluter({ ...polluter })}
-          onPolluterMouseOut={() => setHoveredPolluter(undefined)}
+          onPolluterMouseOver={polluter => setHoveredPolluters([{ ...polluter }])}
+          onPolluterMouseOut={() => setHoveredPolluters([])}
           onPolluterSelected={polluter => setSelectedPolluter({ ...polluter })}
           polluters={props.polluters}
         />
       </div>
       <div className="map-container">
         <WorldMap
-          hoveredPolluter={hoveredPolluter}
+          hoveredPolluters={hoveredPolluters}
           selectedPolluter={selectedPolluter}
-          onPolluterHovered={polluter => setHoveredPolluter({ ...polluter })}
-          onPolluterUnhovered={() => setHoveredPolluter(undefined)}
+          onPolluterHovered={handleHovered}
+          onPolluterUnhovered={handleUnhovered}
           onPolluterSelected={polluter => setSelectedPolluter({ ...polluter })}
           polluters={props.polluters}
         />
