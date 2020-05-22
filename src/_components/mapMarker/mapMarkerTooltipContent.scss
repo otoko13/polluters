@@ -1,9 +1,10 @@
 .MuiTooltip-popper {
   .MuiTooltip-tooltip {
-    background-color: rgba(234, 234, 234, 0.9);
+    background-color: rgba(240, 240, 240, 0.9);
     color: inherit;
     border: 1px solid rgb(180, 180, 180);
     padding: 15px;
+    color: rgb(34, 34, 34);
 
     .MapMarkerTooltipContent {
       .title {
@@ -11,27 +12,29 @@
         flex-direction: row;
         justify-items: flex-start;
         align-items: center;
+        font-weight: 600;
 
         .rank {
           padding-right: 5px;
-          font-size: 1.8em;
+          font-size: 2.0em;
           color: red;
         }
         
         .name {
-          font-size: 1.35em;
+          font-size: 1.5em;
         }
       }
 
       .global-emissions {
         padding-top: 20px;
-        font-size: 1.25em;
+        font-size: 1.4em;
+        line-height: 1.45em;
       }
 
       .instruction {
         padding-top: 10px;
-        font-size: 1.25em;
-        color: rgb(255, 92, 92);
+        font-size: 1.4em;
+        color: rgb(255, 77, 77);
       }
     }
   }

@@ -1,4 +1,4 @@
-import pollutersData from '../resources/top20_polluters.json';
+import pollutersData from '../data/top20_polluters.json';
 import Polluter from '../model/Polluter';
 
 class PollutersUtil {

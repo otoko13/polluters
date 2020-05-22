@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as BarrelSvg } from '../../resources/barrel.svg';
+import { ReactComponent as BarrelSvg } from '../../images/barrel.svg';
 import './barrel.scss';
 
 export enum EHighlightStatus {

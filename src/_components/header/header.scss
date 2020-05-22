@@ -6,17 +6,19 @@
   justify-items: flex-start;
 
   .logo {
-    background-image: url('../../resources/logo2.png');
+    background-image: url('../../images/logo2.png');
     background-size: contain;
     background-repeat: no-repeat;
-    height: 90%;
-    width: 90px;
-    margin-left: 20px;
+    height: 80%;
+    width: 65px;
+    margin-left: 25px;
   }
 
   .title {
     color: #b93550;
     flex: 1 0 auto;
+    font-size: 2.5em;
+    font-weight: 100;
   }
 
   .menu-container {

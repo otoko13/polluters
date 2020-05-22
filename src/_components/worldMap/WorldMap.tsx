@@ -2,7 +2,7 @@ import React from 'react';
 import './worldMap.scss';
 import { ComposableMap, Geographies, Geography, ZoomableGroup, Position } from 'react-simple-maps';
 
-import mapJson from '../../resources/world-110m.json';
+import mapJson from '../../data/world-110m.json';
 import { IPolluter } from '../../model/Polluter';
 import MapMarker from '../mapMarker/MapMarker';
 import InfoPanel from '../infoPanel/InfoPanel';
