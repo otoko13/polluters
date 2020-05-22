@@ -1,11 +1,7 @@
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import Divider from '@material-ui/core/Divider';
-import NavigateNext from '@material-ui/icons/NavigateNext';
-import NavigateBefore from '@material-ui/icons/NavigateBefore';
 import { IPolluter } from '../../model/Polluter';
 import './infoPanel.scss';
 import PolluterInfoDisplay from './PolluterInfoDisplay';

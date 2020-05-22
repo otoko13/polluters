@@ -5,7 +5,6 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup, Position } from '
 import mapJson from '../../data/world-110m.json';
 import { IPolluter } from '../../model/Polluter';
 import MapMarker from '../mapMarker/MapMarker';
-import InfoPanel from '../infoPanel/InfoPanel';
 
 export interface IWorldMapProps {
   polluters: IPolluter[];
