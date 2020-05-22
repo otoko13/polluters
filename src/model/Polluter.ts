@@ -69,7 +69,7 @@ class Polluter {
     if (!value) {
       return undefined;
     }
-    const regEx = /^\$(.+)m(.)*$/gi;
+    const regEx = /^\$(.+)m.*$/gi;
     const payMatch = regEx.exec(value);
     if (!payMatch) {
       return undefined;

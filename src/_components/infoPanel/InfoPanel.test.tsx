@@ -29,6 +29,7 @@ beforeEach(() => {
       projectedIncreaseInProduction2018to2030: '8 albums',
       revenue: '$2bn',
     } as IPolluter,
+    allFossilFuelData: [],
   };
 });
 
@@ -49,7 +50,7 @@ describe('closing', () => {
 
 describe('navigation', () => {
   it('should disable previous button if isFirst is true', () => {
-    const { getByTitle } = render(<InfoPanel {...props} isFirst={true} />);
+    const { getByTitle } = render(<InfoPanel {...props} isFirst />);
     const previousButton = getByTitle('See previous');
     fireEvent.click(previousButton);
     expect(previousButton.hasAttribute('disabled')).toBeTruthy();
@@ -57,7 +58,7 @@ describe('navigation', () => {
   });
 
   it('should disable next button if isLast is true', () => {
-    const { getByTitle } = render(<InfoPanel {...props} isLast={true} />);
+    const { getByTitle } = render(<InfoPanel {...props} isLast />);
     const nextButton = getByTitle('See next');
     fireEvent.click(nextButton);
     expect(nextButton.hasAttribute('disabled')).toBeTruthy();

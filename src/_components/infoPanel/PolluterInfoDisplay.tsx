@@ -13,16 +13,19 @@ import { IPolluter } from '../../model/Polluter';
 import PropertyDisplay from './PropertyDisplay';
 import './polluterInfoDisplay.scss';
 import OwnershipDisplay from './OwnershipDisplay';
+import FossilFuelChart from './FossilFuelChart';
+import { IFossilFuelData } from '../../util/polluters.util';
 
 export interface IPolluterInfoDisplayProps {
   selectedPolluter: IPolluter;
+  allFossilFuelData: IFossilFuelData[];
 }
 
 const neutralIconColor = 'grey';
 const badIconColor = '#c45a68';
 const goodIconColor = '#489c61';
 
-const PolluterInfoDisplay = ({ selectedPolluter }: IPolluterInfoDisplayProps) => (
+const PolluterInfoDisplay = ({ selectedPolluter, allFossilFuelData }: IPolluterInfoDisplayProps) => (
   <div className="PolluterInfoDisplay">
     <PropertyDisplay title="HQ" icon={<LocationOnIcon fontSize="large" style={{ color: neutralIconColor }} />}>
       {selectedPolluter.hq}
@@ -43,6 +46,10 @@ const PolluterInfoDisplay = ({ selectedPolluter }: IPolluterInfoDisplayProps) =>
     <PropertyDisplay title="Fossil fuel production" icon={<LocalGasStationIcon fontSize="large" style={{ color: badIconColor }} />}>
       {selectedPolluter.fossilFuelProduction}
     </PropertyDisplay>
+    {
+      allFossilFuelData.findIndex(f => f.rank === selectedPolluter.rank) > -1 &&
+      <FossilFuelChart rankToHighlight={selectedPolluter.rank} allFossilFuelData={allFossilFuelData} />
+    }
 
     <PropertyDisplay
       title="Projected increase in production 2018-2030"

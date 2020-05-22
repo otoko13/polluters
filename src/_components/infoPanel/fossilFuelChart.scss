@@ -1,0 +1,50 @@
+.FossilFuelChart {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+
+  .bars-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+    .bar-container {
+      width: 30px;
+
+      .bar {
+        width: 100%;
+        height: 100%;
+        background: rgb(155, 155, 155);
+        border: 1px solid grey;
+
+        &.highlighted {
+          height: 0;
+          background: rgb(212, 0, 0);
+          border: none;
+          animation: grow;
+          animation-delay: 0.5s;
+          animation-duration: 0.3s;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+  }
+}
+
+.fossil-fuel-chart-tooltip {
+  // TODO: fix horrible use of important - need better specificity by setting more classes on tooltip
+  font-size: 1em !important;
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}

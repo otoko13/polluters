@@ -9,6 +9,7 @@ import NavigateBefore from '@material-ui/icons/NavigateBefore';
 import { IPolluter } from '../../model/Polluter';
 import './infoPanel.scss';
 import PolluterInfoDisplay from './PolluterInfoDisplay';
+import { IFossilFuelData } from '../../util/polluters.util';
 
 export interface IInfoPanelProps {
   selectedPolluter: IPolluter | undefined;
@@ -17,6 +18,7 @@ export interface IInfoPanelProps {
   onPreviousClick: () => void;
   isFirst: boolean;
   isLast: boolean;
+  allFossilFuelData: IFossilFuelData[];
 }
 
 // TODO: split the navigation icons out into its own component
@@ -52,7 +54,7 @@ const InfoPanel = (props: IInfoPanelProps) => (
             </div>
             <Divider />
             <div className="content">
-              <PolluterInfoDisplay selectedPolluter={props.selectedPolluter} />
+              <PolluterInfoDisplay selectedPolluter={props.selectedPolluter} allFossilFuelData={props.allFossilFuelData} />
             </div>
           </div>
         )

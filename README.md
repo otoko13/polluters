@@ -21,7 +21,7 @@ My decision to display the data geographically came from my primary curiosity ab
 
 As always with coding exercises, I couldn't do everything I wanted to. Here are a list of improvements I'd make to the design and implementation given more time:
 
-- Implement the comparison charts button, which would open a modal/panel allowing users to select which polluters to compare, and produce bar charts for the fossil fuel production and global emissions data points.
+- Implement the comparison charts button, which would open a modal/panel allowing users to select which polluters to compare, and produce bar charts for the fossil fuel production and global emissions data points, with some swanky d3 possibly.
 
 - This is the first time I've used material-ui (and I used the exercise as a learning experience). As such, I probably missed several components I could have used (e.g., Flexbox for layout). I always would have utilised more CSS-in-JS opportunities provided by the components.
 
@@ -30,6 +30,10 @@ As always with coding exercises, I couldn't do everything I wanted to. Here are 
 - I started out sure that Redux would be overkill for such a simple app where most of the data flow is in one direction. However, I would investigate its use (having never had an opportunity to use it in a work project before) in setting and retrieving the selected polluter.
 
 - Automate adding the longitude and latitude data using the Google Maps Cloud Platform API.
+
+- A fully responsive version of the layout for mobile browsers.
+
+- Further accessibility checks and improvements.
 
 ## Credits
 
