@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot should look sensible 1`] = `
+<div
+  class="PollutersMenu"
+>
+  <button
+    aria-controls="polluters-menu"
+    aria-haspopup="true"
+    aria-label="See ranking"
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      See Ranking
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <div
+    class="anchor"
+  />
+</div>
+`;

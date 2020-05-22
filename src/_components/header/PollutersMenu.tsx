@@ -47,7 +47,13 @@ const PollutersMenu = (props: IPollutersMenuProps) => {
 
   return (
     <div className="PollutersMenu">
-      <Button aria-controls="polluters-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button 
+        variant="contained" 
+        aria-controls="polluters-menu" 
+        aria-haspopup="true"
+        aria-label="See ranking"
+        onClick={handleClick}
+      >
         See Ranking
       </Button>
       <div className="anchor" ref={menuAnchorRef} />

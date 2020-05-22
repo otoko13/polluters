@@ -1,8 +1,8 @@
 import React from 'react';
 import './header.scss';
+import Paper from '@material-ui/core/Paper';
 import { IPolluter } from '../../model/Polluter';
 import PollutersMenu from './PollutersMenu';
-import Paper from '@material-ui/core/Paper';
 
 export interface IHeaderProps {
   polluters: IPolluter[];

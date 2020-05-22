@@ -42,7 +42,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
+        // "plugin:react-hooks/recommended", // can't use this - documented issue in current version
         "plugin:jsx-a11y/recommended",
         "plugin:import/react"
     ],
@@ -123,6 +123,7 @@
         "linebreak-style":"off",
         "lines-between-class-members": "off",
         "arrow-parens": ["error", "as-needed"],
-        "operator-linebreak": "off"
+        "operator-linebreak": "off",
+        "react/jsx-props-no-spreading": "off"
     }
   }

@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots should look sensible for shareholders: Shareholders 1`] = `
+<div
+  class="OwnershipDisplay"
+>
+  <div
+    class="icons"
+  >
+    <span>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z"
+          fill-rule="evenodd"
+        />
+        <circle
+          cx="9"
+          cy="8"
+          fill-rule="evenodd"
+          r="4"
+        />
+        <path
+          d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24C14.5 5.27 15 6.58 15 8s-.5 2.73-1.33 3.76c.42.14.86.24 1.33.24zM9 13c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text"
+  >
+    Shareholders
+  </div>
+</div>
+`;
+
+exports[`snapshots should look sensible for state and shareholders: State and shareholders 1`] = `
+<div
+  class="OwnershipDisplay"
+>
+  <div
+    class="icons"
+  >
+    <span>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5.2496 8.0688l2.83-2.8268 14.134 14.15-2.83 2.8268zM9.4857 3.8272l2.828-2.8288 5.6576 5.656-2.828 2.8288zM.9989 12.3147l2.8284-2.8284L9.484 15.143l-2.8284 2.8284zM1 21h12v2H1z"
+        />
+      </svg>
+       
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z"
+          fill-rule="evenodd"
+        />
+        <circle
+          cx="9"
+          cy="8"
+          fill-rule="evenodd"
+          r="4"
+        />
+        <path
+          d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24C14.5 5.27 15 6.58 15 8s-.5 2.73-1.33 3.76c.42.14.86.24 1.33.24zM9 13c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text"
+  >
+    State and shareholders
+  </div>
+</div>
+`;
+
+exports[`snapshots should look sensible for state: State 1`] = `
+<div
+  class="OwnershipDisplay"
+>
+  <div
+    class="icons"
+  >
+    <span>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5.2496 8.0688l2.83-2.8268 14.134 14.15-2.83 2.8268zM9.4857 3.8272l2.828-2.8288 5.6576 5.656-2.828 2.8288zM.9989 12.3147l2.8284-2.8284L9.484 15.143l-2.8284 2.8284zM1 21h12v2H1z"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text"
+  >
+    State
+  </div>
+</div>
+`;

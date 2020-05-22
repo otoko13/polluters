@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPolluter, EOwnership } from '../../model/Polluter';
+import { IPolluter } from '../../model/Polluter';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import CloudIcon from '@material-ui/icons/Cloud';
