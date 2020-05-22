@@ -18,10 +18,10 @@ module.exports = {
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.(png|jpg)$': 'identity-obj-proxy',
+        '\\.(svg)$': 'identity-obj-proxy',
     },
     transformIgnorePatterns: [
         '^.+\\.module\\.{css,sass,scss}$',
         '\\.(png|jpg)$',
     ],
-    setupFiles: ['./jest.setup.js'],
 };

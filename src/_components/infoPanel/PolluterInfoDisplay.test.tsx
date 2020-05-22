@@ -24,6 +24,7 @@ beforeEach(() => {
       projectedIncreaseInProduction2018to2030: '8 albums',
       revenue: '$2bn',
     } as IPolluter,
+    allFossilFuelData: [],
   };
 });
 

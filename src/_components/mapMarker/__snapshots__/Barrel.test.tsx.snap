@@ -11,9 +11,7 @@ exports[`snapshots should look sensible 1`] = `
       <g
         class="barrel-content"
       >
-        <svg>
-          barrel.svg
-        </svg>
+        <reactcomponent />
       </g>
     </g>
   </g>
