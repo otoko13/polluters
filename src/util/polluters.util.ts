@@ -9,6 +9,10 @@ class PollutersUtil {
       longitude: polluter.Longitude,
       latitude: polluter.Latitude,
       globalEmissions: polluter['Global emissions 1965-2017'],
+      ceo: polluter.CEO,
+      hq: polluter.HQ,
+      ownership: polluter.Ownership,
+      ceoAnnualPay: polluter["CEO pay"],
     }));
   }
 }

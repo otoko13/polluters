@@ -1,0 +1,22 @@
+.PropertyDisplay {
+  display: flex;
+  flex: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 20px 0;
+
+  .icon-container {
+    width: 50px;
+    flex: 0 0 auto;
+  }
+
+  .content {
+    font-size: 1.2em;
+    padding-top: 6px;
+
+    .title {
+      font-weight: 600;
+      padding-bottom: 10px;
+    }
+  }
+}

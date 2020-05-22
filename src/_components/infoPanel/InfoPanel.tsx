@@ -7,6 +7,7 @@ import NavigateNext from '@material-ui/icons/NavigateNext';
 import NavigateBefore from '@material-ui/icons/NavigateBefore';
 import { IPolluter } from '../../model/Polluter';
 import './infoPanel.scss';
+import PolluterInfoDisplay from './PolluterInfoDisplay';
 
 export interface IInfoPanelProps {
   selectedPolluter: IPolluter | undefined;
@@ -47,6 +48,7 @@ const InfoPanel = (props: IInfoPanelProps) => {
                   </IconButton>
                 </div>
               </div>
+              <PolluterInfoDisplay selectedPolluter={props.selectedPolluter} />
             </>
           )
         }
