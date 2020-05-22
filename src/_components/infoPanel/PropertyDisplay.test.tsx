@@ -15,6 +15,6 @@ beforeEach(() => {
 describe('snapshots', () => {
   it('should look sensible', () => {
     const { container } = render(<PropertyDisplay {...props} />);
-    expect(container.firstChild).toMatchSnapshot('State');
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

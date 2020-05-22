@@ -47,9 +47,9 @@ const PollutersMenu = (props: IPollutersMenuProps) => {
 
   return (
     <div className="PollutersMenu">
-      <Button 
-        variant="contained" 
-        aria-controls="polluters-menu" 
+      <Button
+        variant="contained"
+        aria-controls="polluters-menu"
         aria-haspopup="true"
         aria-label="See ranking"
         onClick={handleClick}

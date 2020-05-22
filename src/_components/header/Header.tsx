@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.scss';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 import { IPolluter } from '../../model/Polluter';
 import PollutersMenu from './PollutersMenu';
 
@@ -18,6 +19,12 @@ const Header = (props: IHeaderProps) => (
       Top 20 Global Polluters
     </h1>
     <div className="menu-container">
+      <Button
+        variant="contained"
+        aria-label="See ranking"
+      >
+        Compare polluters
+      </Button>
       <PollutersMenu
         polluters={props.polluters}
         onNothingHovered={props.onPolluterMouseOut}

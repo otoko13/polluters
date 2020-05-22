@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots should look sensible 1`] = `
+<svg>
+  <div
+    class="MapMarkerTooltipContent"
+  >
+    <div
+      class="title"
+    >
+      <div
+        class="rank"
+      >
+        1
+        .
+      </div>
+      <div
+        class="name"
+      >
+        Some company
+      </div>
+    </div>
+    <div
+      class="global-emissions"
+    >
+      <b>
+        Global emissions 1965-2017:
+      </b>
+      <br />
+      500 tonnes
+    </div>
+    <div
+      class="instruction"
+    >
+      Click the barrel to see more...
+    </div>
+  </div>
+</svg>
+`;

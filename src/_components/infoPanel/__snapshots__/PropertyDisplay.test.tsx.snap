@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshots should look sensible: State 1`] = `
+exports[`snapshots should look sensible 1`] = `
 <div
   class="PropertyDisplay"
 >

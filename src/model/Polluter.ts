@@ -51,8 +51,8 @@ class Polluter {
   readonly revenue: string;
 
   private static getOwnership(ownership: string) {
-    const isState = ownership.toLowerCase().indexOf('state') > -1;
-    const isShareholder = ownership.toLowerCase().indexOf('shareholder') > -1;
+    const isState = ownership.toLowerCase().includes('state');
+    const isShareholder = ownership.toLowerCase().includes('shareholder');
     if (isState && isShareholder) {
       return EOwnership.StateAndShareholders;
     }
@@ -65,14 +65,14 @@ class Polluter {
     return EOwnership.Unknown;
   }
 
-  private static getCeoAnnualPay(value: string | undefined) {
+  static getCeoAnnualPay(value: string | undefined) {
     if (!value) {
-      return;
+      return undefined;
     }
     const regEx = /^\$(.+)m(.)*$/gi;
     const payMatch = regEx.exec(value);
     if (!payMatch) {
-      return;
+      return undefined;
     }
     return parseFloat(payMatch[1]);
   }
@@ -94,10 +94,7 @@ class Polluter {
     this.environmentalScandal = args.environmentalScandal;
     this.futureProjects = args.futureProjects || NO_INFORMATTON;
     this.revenue = args.revenue || NO_INFORMATTON;
-
     this.annualCeoPay = Polluter.getCeoAnnualPay(args.ceoAnnualPay);
-    console.log(this.annualCeoPay);
-
     this.ownership = Polluter.getOwnership(args.ownership);
   }
 }

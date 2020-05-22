@@ -30,6 +30,6 @@ beforeEach(() => {
 describe('snapshots', () => {
   it('should look sensible', () => {
     const { container } = render(<PolluterInfoDisplay {...props} />);
-    expect(container.firstChild).toMatchSnapshot('State');
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

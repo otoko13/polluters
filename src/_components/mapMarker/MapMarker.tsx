@@ -39,6 +39,7 @@ const MapMarker = (props: IMapMarkerProps) => {
       <svg> // need this here as Tooltip needs a child that can accept a ref
         <Marker
           key={props.polluter.rank}
+          aria-label={props.polluter.name}
           coordinates={[props.polluter.longitude, props.polluter.latitude]}
           onClick={props.onSelected}
         >

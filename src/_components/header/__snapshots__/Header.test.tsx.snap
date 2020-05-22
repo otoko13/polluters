@@ -15,6 +15,21 @@ exports[`snapshot should look sensible 1`] = `
   <div
     class="menu-container"
   >
+    <button
+      aria-label="See ranking"
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Compare polluters
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
     <div
       class="PollutersMenu"
     >
