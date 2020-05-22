@@ -31,6 +31,8 @@ As always with coding exercises, I couldn't do everything I wanted to. Here are 
 
 - Automate adding the longitude and latitude data using the Google Maps Cloud Platform API.
 
+- There should be a way to programmatically center the map on the selected polluter marker so that it wouldn't be hidden by the info panel.
+
 - A fully responsive version of the layout for mobile browsers.
 
 - Further accessibility checks and improvements.
