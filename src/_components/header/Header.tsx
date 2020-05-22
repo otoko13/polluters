@@ -2,6 +2,7 @@ import React from 'react';
 import './header.scss';
 import { IPolluter } from '../../model/Polluter';
 import PollutersMenu from './PollutersMenu';
+import Paper from '@material-ui/core/Paper';
 
 export interface IHeaderProps {
   polluters: IPolluter[];
@@ -11,7 +12,7 @@ export interface IHeaderProps {
 }
 
 const Header = (props: IHeaderProps) => (
-  <div className="Header">
+  <Paper className="Header">
     <div className="logo" />
     <h1 className="title">
       Top 20 Global Polluters
@@ -24,7 +25,7 @@ const Header = (props: IHeaderProps) => (
         onSelected={props.onPolluterSelected}
       />
     </div>
-  </div>
+  </Paper>
 );
 
 export default Header;
