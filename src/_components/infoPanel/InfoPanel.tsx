@@ -10,6 +10,7 @@ import { IPolluter } from '../../model/Polluter';
 import './infoPanel.scss';
 import PolluterInfoDisplay from './PolluterInfoDisplay';
 import { IFossilFuelData } from '../../util/polluters.util';
+import NavigationBar from './NavigationBar';
 
 export interface IInfoPanelProps {
   selectedPolluter: IPolluter | undefined;
@@ -41,15 +42,13 @@ const InfoPanel = (props: IInfoPanelProps) => (
                 <div className="name">{props.selectedPolluter.name}</div>
               </div>
               <div className="icons">
-                <IconButton onClick={props.onPreviousClick} className="previous-icon" disabled={props.isFirst} title="See previous">
-                  <NavigateBefore />
-                </IconButton>
-                <IconButton onClick={props.onNextClick} className="next-icon" disabled={props.isLast} title="See next">
-                  <NavigateNext />
-                </IconButton>
-                <IconButton onClick={props.onClose} className="close-icon" title="Close">
-                  <CloseIcon />
-                </IconButton>
+                <NavigationBar
+                  isFirst={props.isFirst}
+                  isLast={props.isLast}
+                  onClose={props.onClose}
+                  onNextClick={props.onNextClick}
+                  onPreviousClick={props.onPreviousClick}
+                />
               </div>
             </div>
             <Divider />
