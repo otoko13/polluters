@@ -32,6 +32,13 @@ const WorldMap = (props: IWorldMapProps) => {
     setZoomLevel(position.zoom);
   }
 
+  const sortedPolluters = [...props.polluters].sort((p1, p2) => {
+    if (isHovered(p1) || (props.selectedPolluter && props.selectedPolluter.rank === p1.rank)) {
+      return 1;
+    }
+    return p1.rank < p2.rank ? 1 : -1;
+  });
+
   return (
     <div className="WorldMap">
       <ComposableMap height={462}>
@@ -41,19 +48,21 @@ const WorldMap = (props: IWorldMapProps) => {
               ({ geographies }): JSX.Element[] => geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} />)
             }
           </Geographies>
-          {props.polluters.sort((p1, p2) => (p1.rank < p2.rank ? 1 : -1)).map(polluter => (
-            <MapMarker
-              key={polluter.rank}
-              zoomLevel={zoomLevel}
-              polluter={polluter}
-              onHovered={() => props.onPolluterHovered(polluter)}
-              onUnhovered={() => props.onPolluterUnhovered(polluter)}
-              onSelected={() => props.onPolluterSelected(polluter)}
-              isHovered={isHovered(polluter)}
-              isSelected={props.selectedPolluter && props.selectedPolluter.rank === polluter.rank}
-              isUnhighlighted={shouldUnhighlightPolluter(polluter)}
-            />
-          ))}
+          {
+            sortedPolluters.map(polluter => (
+              <MapMarker
+                key={polluter.rank}
+                zoomLevel={zoomLevel}
+                polluter={polluter}
+                onHovered={() => props.onPolluterHovered(polluter)}
+                onUnhovered={() => props.onPolluterUnhovered(polluter)}
+                onSelected={() => props.onPolluterSelected(polluter)}
+                isHovered={isHovered(polluter)}
+                isSelected={props.selectedPolluter && props.selectedPolluter.rank === polluter.rank}
+                isUnhighlighted={shouldUnhighlightPolluter(polluter)}
+              />
+            ))
+          }
         </ZoomableGroup>
       </ComposableMap>
     </div>
