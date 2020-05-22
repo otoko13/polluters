@@ -47,6 +47,13 @@ const App = (props: IAppProps) => {
     }
   }
 
+  function handleRankClicked(rank: number) {
+    const newSelectedPolluter = props.polluters.find(p => p.rank === rank);
+    if (newSelectedPolluter) {
+      setSelectedPolluter({ ...newSelectedPolluter });
+    }
+  }
+
   return (
     <div className="App">
       <CssBaseline />
@@ -77,6 +84,7 @@ const App = (props: IAppProps) => {
         isFirst={!!selectedPolluter && selectedPolluter.rank === minRank}
         isLast={!!selectedPolluter && selectedPolluter.rank === maxRank}
         allFossilFuelData={allFossilFuelData}
+        onRankClicked={handleRankClicked}
       />
     </div>
   );

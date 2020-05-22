@@ -6,6 +6,7 @@ import { IFossilFuelData } from '../../util/polluters.util';
 export interface IFossilFuelChartProps {
   allFossilFuelData: IFossilFuelData[];
   rankToHighlight: number;
+  onRankClicked: (rank: number) => void;
 }
 
 const BAR_WIDTH = 30;
@@ -20,7 +21,15 @@ const FossilFuelChart = (props: IFossilFuelChartProps) => {
     return (f.millionsOfBarrelsPerDay / maxBarrels) * 100;
   }
 
+  function handleKeyDown(evt: React.KeyboardEvent, rank: number) {
+    // enter
+    if (evt.keyCode === 13) {
+      props.onRankClicked(rank);
+    }
+  }
+
   function getBars() {
+    // TODO: using div for click event handler as animation works - button animates from middle - can't quite figure it out
     const sortedData = [...props.allFossilFuelData].sort((f1, f2) => (f1.rank > f2.rank ? 1 : -1));
     return sortedData.map(f => (
       <Tooltip
@@ -30,7 +39,11 @@ const FossilFuelChart = (props: IFossilFuelChartProps) => {
         key={f.rank}
       >
         <div
+          role="button"
+          tabIndex={0}
           className="bar-container"
+          onKeyDown={evt => handleKeyDown(evt, f.rank)}
+          onClick={_evt => props.onRankClicked(f.rank)}
           style={{ height: `${calculateHeight(f)}%`, width: BAR_WIDTH }}
         >
           <div

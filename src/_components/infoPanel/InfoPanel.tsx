@@ -16,6 +16,7 @@ export interface IInfoPanelProps {
   isFirst: boolean;
   isLast: boolean;
   allFossilFuelData: IFossilFuelData[];
+  onRankClicked: (rank: number) => void;
 }
 
 // TODO: split the navigation icons out into its own component
@@ -49,7 +50,11 @@ const InfoPanel = (props: IInfoPanelProps) => (
             </div>
             <Divider />
             <div className="content">
-              <PolluterInfoDisplay selectedPolluter={props.selectedPolluter} allFossilFuelData={props.allFossilFuelData} />
+              <PolluterInfoDisplay
+                onRankClicked={props.onRankClicked}
+                selectedPolluter={props.selectedPolluter}
+                allFossilFuelData={props.allFossilFuelData}
+              />
             </div>
           </div>
         )

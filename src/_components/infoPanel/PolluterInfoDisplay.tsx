@@ -19,13 +19,14 @@ import { IFossilFuelData } from '../../util/polluters.util';
 export interface IPolluterInfoDisplayProps {
   selectedPolluter: IPolluter;
   allFossilFuelData: IFossilFuelData[];
+  onRankClicked: (rank: number) => void;
 }
 
 const neutralIconColor = 'grey';
 const badIconColor = '#c45a68';
 const goodIconColor = '#489c61';
 
-const PolluterInfoDisplay = ({ selectedPolluter, allFossilFuelData }: IPolluterInfoDisplayProps) => (
+const PolluterInfoDisplay = ({ selectedPolluter, allFossilFuelData, onRankClicked }: IPolluterInfoDisplayProps) => (
   <div className="PolluterInfoDisplay">
     <PropertyDisplay title="HQ" icon={<LocationOnIcon fontSize="large" style={{ color: neutralIconColor }} />}>
       {selectedPolluter.hq}
@@ -48,7 +49,7 @@ const PolluterInfoDisplay = ({ selectedPolluter, allFossilFuelData }: IPolluterI
     </PropertyDisplay>
     {
       allFossilFuelData.findIndex(f => f.rank === selectedPolluter.rank) > -1 &&
-      <FossilFuelChart rankToHighlight={selectedPolluter.rank} allFossilFuelData={allFossilFuelData} />
+      <FossilFuelChart rankToHighlight={selectedPolluter.rank} allFossilFuelData={allFossilFuelData} onRankClicked={onRankClicked} />
     }
 
     <PropertyDisplay

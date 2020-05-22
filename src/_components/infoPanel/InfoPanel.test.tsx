@@ -30,6 +30,7 @@ beforeEach(() => {
       revenue: '$2bn',
     } as IPolluter,
     allFossilFuelData: [],
+    onRankClicked: jest.fn(),
   };
 });
 
