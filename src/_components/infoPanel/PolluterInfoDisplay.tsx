@@ -1,12 +1,15 @@
 import React from 'react';
 import { IPolluter, EOwnership } from '../../model/Polluter';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import CloudIcon from '@material-ui/icons/Cloud';
 import PersonIcon from '@material-ui/icons/Person';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import LocalGasStationIcon from '@material-ui/icons/LocalGasStation';
 import NextWeekIcon from '@material-ui/icons/NextWeek';
+import PublicIcon from '@material-ui/icons/Public';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import WarningIcon from '@material-ui/icons/Warning';
 import PropertyDisplay from './PropertyDisplay';
 import './polluterInfoDisplay.scss';
 import OwnershipDisplay from './OwnershipDisplay';
@@ -34,6 +37,10 @@ const PolluterInfoDisplay = ({ selectedPolluter }: IPolluterInfoDisplayProps) =>
         {selectedPolluter.ceo} (annual pay: {selectedPolluter.annualCeoPay ? `$${selectedPolluter.annualCeoPay}m` : 'undisclosed'})
       </PropertyDisplay>
 
+      <PropertyDisplay title={"Revenue"} icon={<AttachMoneyIcon fontSize="large" style={{color: neutralIconColor}} />}>
+        {selectedPolluter.revenue}
+      </PropertyDisplay>
+
       <PropertyDisplay title={"Fossil fuel production"} icon={<LocalGasStationIcon fontSize="large" style={{color: badIconColor}} />}>
         {selectedPolluter.fossilFuelProduction}
       </PropertyDisplay>
@@ -52,6 +59,26 @@ const PolluterInfoDisplay = ({ selectedPolluter }: IPolluterInfoDisplayProps) =>
 
       <PropertyDisplay title={"Future projects"} icon={<NextWeekIcon fontSize="large" style={{color: badIconColor}} />}>
         {selectedPolluter.futureProjects}
+      </PropertyDisplay>
+
+      {
+        selectedPolluter.environmentalDisaster && (
+          <PropertyDisplay title={"Environmental disaster"} icon={<WarningIcon fontSize="large" style={{color: badIconColor}} />}>
+            {selectedPolluter.environmentalDisaster}
+          </PropertyDisplay>
+        )
+      }
+
+      {
+        selectedPolluter.environmentalScandal && (
+          <PropertyDisplay title={"Environmental scandal"} icon={<WarningIcon fontSize="large" style={{color: badIconColor}} />}>
+            {selectedPolluter.environmentalScandal}
+          </PropertyDisplay>
+        )
+      }
+
+      <PropertyDisplay title={"Investment in renewables"} icon={<PublicIcon fontSize="large" style={{color: goodIconColor}} />}>
+        {selectedPolluter.investmentInRenewables}
       </PropertyDisplay>
     </div>
   );

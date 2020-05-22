@@ -4,33 +4,46 @@
     padding: 20px;
   }
 
-  .header {
+  .info-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
 
-    .icons {
+    .header {
       flex: 0 0 auto;
-    }
-
-    .title {
-      flex: 1 1 auto;
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      
-      .rank {
-        display: inline-block;
-        padding-right: 10px;
-        font-size: 2.3em;
-        color: red;
+      padding-bottom: 17px;
+
+      .icons {
+        flex: 0 0 auto;
       }
-      
-      .name {
-        display: inline-block;
-        font-size: 1.5em;
+
+      .title {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        .rank {
+          display: inline-block;
+          padding-right: 10px;
+          font-size: 2.3em;
+          color: red;
+        }
+        
+        .name {
+          display: inline-block;
+          font-size: 1.5em;
+        }
       }
+    }
+
+    .content {
+      flex: 0 1 auto;
+      overflow-y: auto;
     }
   }
 }

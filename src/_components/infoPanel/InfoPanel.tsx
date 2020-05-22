@@ -8,6 +8,7 @@ import NavigateBefore from '@material-ui/icons/NavigateBefore';
 import { IPolluter } from '../../model/Polluter';
 import './infoPanel.scss';
 import PolluterInfoDisplay from './PolluterInfoDisplay';
+import Divider from '@material-ui/core/Divider';
 
 export interface IInfoPanelProps {
   selectedPolluter: IPolluter | undefined;
@@ -30,7 +31,7 @@ const InfoPanel = (props: IInfoPanelProps) => {
       >
         {
           props.selectedPolluter && (
-            <>
+            <div className="info-container">
               <div className="header">
                 <div className="title">
                   <div className="rank">{props.selectedPolluter.rank}.</div>
@@ -48,8 +49,11 @@ const InfoPanel = (props: IInfoPanelProps) => {
                   </IconButton>
                 </div>
               </div>
-              <PolluterInfoDisplay selectedPolluter={props.selectedPolluter} />
-            </>
+              <Divider />
+              <div className="content">
+                <PolluterInfoDisplay selectedPolluter={props.selectedPolluter} />
+              </div>
+            </div>
           )
         }
       </Drawer>

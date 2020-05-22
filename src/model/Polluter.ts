@@ -16,6 +16,7 @@ export interface IPolluterArgs {
   environmentalDisaster: string | undefined;
   environmentalScandal: string | undefined;
   futureProjects: string | undefined;
+  revenue: string | undefined;
 }
 
 export enum EOwnership{
@@ -47,6 +48,7 @@ class Polluter {
   readonly environmentalDisaster: string | undefined;
   readonly environmentalScandal: string | undefined;
   readonly futureProjects: string;
+  readonly revenue: string;
 
   private static getOwnership(ownership: string) {
     const isState = ownership.toLowerCase().indexOf('state') > -1;
@@ -91,6 +93,7 @@ class Polluter {
     this.environmentalDisaster = args.environmentalDisaster;
     this.environmentalScandal = args.environmentalScandal;
     this.futureProjects = args.futureProjects || NO_INFORMATTON;
+    this.revenue = args.revenue || NO_INFORMATTON;
 
     this.annualCeoPay = Polluter.getCeoAnnualPay(args.ceoAnnualPay);
     console.log(this.annualCeoPay);

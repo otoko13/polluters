@@ -21,6 +21,7 @@ class PollutersUtil {
       projectedEmissions2018to2030: polluter["Projected emissions 2018-30"],
       investmentInRenewables: polluter["Investment in renewables"],
       futureProjects: polluter["Future projects"],
+      revenue: polluter.Revenue,
     }));
   }
 }
