@@ -8,6 +8,14 @@ export interface IPolluterArgs {
   hq: string;
   ceo: string | undefined;
   ceoAnnualPay: string | undefined;
+  fossilFuelProduction: string | undefined;
+  investmentInRenewables: string | undefined;
+  globalEmissions1965to2017: string | undefined;
+  projectedIncreaseInProduction2018to2030: string | undefined;
+  projectedEmissions2018to2030: string | undefined;
+  environmentalDisaster: string | undefined;
+  environmentalScandal: string | undefined;
+  futureProjects: string | undefined;
 }
 
 export enum EOwnership{
@@ -19,6 +27,8 @@ export enum EOwnership{
 
 export interface IPolluter extends Polluter {}
 
+const NO_INFORMATTON = 'No information';
+
 class Polluter {
   readonly name: string;
   readonly rank: number;
@@ -29,6 +39,14 @@ class Polluter {
   readonly hq: string;
   readonly ceo: string;
   readonly annualCeoPay: number | undefined;
+  readonly fossilFuelProduction: string;
+  readonly investmentInRenewables: string;
+  readonly globalEmissions1965to2017: string;
+  readonly projectedIncreaseInProduction2018to2030: string;
+  readonly projectedEmissions2018to2030: string;
+  readonly environmentalDisaster: string | undefined;
+  readonly environmentalScandal: string | undefined;
+  readonly futureProjects: string;
 
   private static getOwnership(ownership: string) {
     const isState = ownership.toLowerCase().indexOf('state') > -1;
@@ -65,6 +83,14 @@ class Polluter {
     this.globalEmissions = args.globalEmissions;
     this.hq = args.hq;
     this.ceo = args.ceo || 'Unknown';
+    this.fossilFuelProduction = args.fossilFuelProduction || NO_INFORMATTON;
+    this.investmentInRenewables = args.investmentInRenewables || NO_INFORMATTON;
+    this.globalEmissions1965to2017 = args.globalEmissions1965to2017 || NO_INFORMATTON;
+    this.projectedIncreaseInProduction2018to2030 = args.projectedIncreaseInProduction2018to2030 || NO_INFORMATTON;
+    this.projectedEmissions2018to2030 = args.projectedEmissions2018to2030 || NO_INFORMATTON;
+    this.environmentalDisaster = args.environmentalDisaster;
+    this.environmentalScandal = args.environmentalScandal;
+    this.futureProjects = args.futureProjects || NO_INFORMATTON;
 
     this.annualCeoPay = Polluter.getCeoAnnualPay(args.ceoAnnualPay);
     console.log(this.annualCeoPay);
