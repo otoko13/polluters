@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots should look sensible: State 1`] = `
+<g
+  class="Barrel  rank-1"
+>
+  <g
+    style="transform: scale3d(1, 1, 1);"
+  >
+    <g
+      class="barrel-content"
+    >
+      <svg>
+        barrel.svg
+      </svg>
+    </g>
+  </g>
+</g>
+`;
