@@ -40,6 +40,7 @@ const App = (props: IAppProps) => {
           onPolluterHovered={handleHovered}
           onPolluterUnhovered={handleUnhovered}
           onPolluterSelected={polluter => setSelectedPolluter({ ...polluter })}
+          onPolluterUnSelected={() => setSelectedPolluter(undefined)}
           polluters={props.polluters}
         />
       </div>

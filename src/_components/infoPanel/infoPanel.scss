@@ -1,0 +1,36 @@
+.InfoPanel {
+  .main-container {
+    width: 500px;
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .icons {
+      flex: 0 0 auto;
+    }
+
+    .title {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+      .rank {
+        display: inline-block;
+        padding-right: 10px;
+        font-size: 1.8em;
+        color: red;
+      }
+      
+      .name {
+        display: inline-block;
+        font-size: 1.35em;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup, Position } from '
 import mapJson from '../../resources/world-110m.json';
 import { IPolluter } from '../../model/Polluter';
 import MapMarker from '../mapMarker/MapMarker';
+import InfoPanel from '../infoPanel/InfoPanel';
 
 export interface IWorldMapProps {
   polluters: IPolluter[];
@@ -13,10 +14,13 @@ export interface IWorldMapProps {
   onPolluterSelected: (polluter: IPolluter) => void;
   onPolluterHovered: (polluter: IPolluter) => void;
   onPolluterUnhovered: (polluter: IPolluter) => void;
+  onPolluterUnSelected: () => void;
 }
 
 const WorldMap = (props: IWorldMapProps) => {
   const [zoomLevel, setZoomLevel] = React.useState(1);
+  const maxRank = React.useMemo(() => Math.max(...props.polluters.map(p => p.rank)), [props.polluters]);
+  const minRank = React.useMemo(() => Math.min(...props.polluters.map(p => p.rank)), [props.polluters]);
 
   function shouldUnhighlightPolluter(polluter: IPolluter) {
     return (props.hoveredPolluters.length > 0 && !isHovered(polluter)) ||
@@ -30,6 +34,26 @@ const WorldMap = (props: IWorldMapProps) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function handleZoom(position: Position) {
     setZoomLevel(position.zoom);
+  }
+
+  function handleNextClick() {
+    if (!props.selectedPolluter || props.selectedPolluter.rank === maxRank) {
+      return;
+    }
+    const nextPolluter = props.polluters.find(p => p.rank === (props.selectedPolluter as IPolluter).rank + 1);
+    if (nextPolluter) {
+      props.onPolluterSelected(nextPolluter);
+    }
+  }
+
+  function handlePreviousClick() {
+    if (!props.selectedPolluter || props.selectedPolluter.rank === minRank) {
+      return;
+    }
+    const prevPolluter = props.polluters.find(p => p.rank === (props.selectedPolluter as IPolluter).rank - 1);
+    if (prevPolluter) {
+      props.onPolluterSelected(prevPolluter);
+    }
   }
 
   const sortedPolluters = [...props.polluters].sort((p1, p2) => {
@@ -65,6 +89,14 @@ const WorldMap = (props: IWorldMapProps) => {
           }
         </ZoomableGroup>
       </ComposableMap>
+      <InfoPanel
+        selectedPolluter={props.selectedPolluter}
+        onNextClick={handleNextClick}
+        onPreviousClick={handlePreviousClick}
+        onClose={props.onPolluterUnSelected}
+        isFirst={!!props.selectedPolluter && props.selectedPolluter.rank === minRank}
+        isLast={!!props.selectedPolluter && props.selectedPolluter.rank === maxRank}
+      />
     </div>
   );
 };
