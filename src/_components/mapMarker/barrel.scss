@@ -3,6 +3,7 @@
 .Barrel {
   transform: scale3d(0.035, 0.035, 0.035);
   transition: transform 0.2s linear;
+  cursor: pointer;
   
   .barrel-content {
     animation: heartBeat;
